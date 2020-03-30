@@ -1,14 +1,23 @@
 .card-area {
   background-color: darkgrey;
-  margin: 80px auto 0 auto;
+  margin: 5% auto auto auto;
   width: 80vw;
   height: 80vh;
   justify-content: center;
 }
+@media only screen and (max-width: 500px) {
+  .card-area {
+    height: 500px;
+  }
+}
+@media only screen and (max-height: 625px) {
+  .card-area {
+    height: 500px;
+  }
+}
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, 250px);
-  margin: 10% auto auto auto;
   column-gap: 10px;
   row-gap: 10px;
   justify-content: center;
@@ -28,28 +37,8 @@
   justify-content: center;
   line-height: 50px;
 }
-.one-card.my-card1 {
-  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.8);
-}
-.one-card.my-card2 {
-  -webkit-box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.8);
-  box-shadow: 0 0 15px 3px rgba(0, 0, 0, 0.8);
-}
 .one-card.my-card3 {
   -webkit-box-shadow: 3px 7px 10px 0 rgba(0, 0, 0, 0.8);
   -moz-box-shadow: 3px 7px 10px 0 rgba(0, 0, 0, 0.8);
   box-shadow: 3px 7px 10px 0 rgba(0, 0, 0, 0.8);
-}
-.one-card.my-card4 {
-  -webkit-box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.8);
-  -moz-box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.8);
-  box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.8);
-}
-.one-card.my-card5 {
-  -webkit-box-shadow: 0 0 15px 1px #0000ff;
-  -moz-box-shadow: 0 0 15px 1px #0000ff;
-  box-shadow: 0 0 15px 1px #0000ff;
 }

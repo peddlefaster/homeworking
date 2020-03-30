@@ -1,6 +1,10 @@
+// This file compiled using '$ lessc styling-2.less > styling-2.css'
+// styling-2.css is referenced by the HTML
+
 // Styling variables
 @box-width: 250px;
 
+// Use CSS box-shadow effects
 .mycard(@horizontalOffset: 0, @verticalOffset: 0, @blur: 10px, @color: #000, @opacity: 0.8, @spread: 0, @inset: false ) {
     @red: red(@color);
     @green: green(@color);
@@ -27,19 +31,27 @@
 
 .card-area {
     background-color: darkgrey;
-    margin: 80px auto 0 auto;
+    margin: 5% auto auto auto;
     width: 80vw;
     height: 80vh;
     justify-content: center;
+
+    // Fix hgt to correct disappearing top rows when scrolling  
+    @media only screen and (max-width: 2*@box-width) {
+        height: 500px;
+        // background-color: lightgrey;
+    }
+    @media only screen and (max-height: 2.5*@box-width) {
+        height: 500px;
+    }
 }
 
 .card-grid {
     display: grid; 
     grid-template-columns: repeat(auto-fill, @box-width); 
-    margin: 10% auto auto auto;
     column-gap: 10px;
     row-gap: 10px;
-    justify-content: center; 
+    justify-content: center;
 }
 
 .center {
@@ -58,23 +70,7 @@
     justify-content: center; 
     line-height: 50px;
 
-    &.my-card1 {
-        .mycard();
-    }
-
-    &.my-card2 {
-        .mycard(@spread: 3px, @blur: 15px);
-    }
-
-    &.my-card3 {
+    &.my-card3 { 
         .mycard(@horizontalOffset: 3px, @verticalOffset: 7px);
-    }
-
-    &.my-card4 {
-        .mycard(@inset: true);
-    }
-
-    &.my-card5 {
-        .mycard(@color: blue, @opacity: 1, @blur: 15px, @spread: 1px);
     }
 }
