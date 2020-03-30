@@ -1,0 +1,80 @@
+// Styling variables
+@box-width: 250px;
+
+.mycard(@horizontalOffset: 0, @verticalOffset: 0, @blur: 10px, @color: #000, @opacity: 0.8, @spread: 0, @inset: false ) {
+    @red: red(@color);
+    @green: green(@color);
+    @blue: blue(@color);
+
+    & when (@inset = true) {
+        -webkit-box-shadow: inset @horizontalOffset @verticalOffset @blur
+            @spread rgba(@red, @green, @blue, @opacity);
+        -moz-box-shadow: inset @horizontalOffset @verticalOffset @blur @spread
+            rgba(@red, @green, @blue, @opacity);
+        box-shadow: inset @horizontalOffset @verticalOffset @blur @spread
+            rgba(@red, @green, @blue, @opacity);
+    }
+
+    & when (@inset = false) {
+        -webkit-box-shadow: @horizontalOffset @verticalOffset @blur @spread
+            rgba(@red, @green, @blue, @opacity);
+        -moz-box-shadow: @horizontalOffset @verticalOffset @blur @spread
+            rgba(@red, @green, @blue, @opacity);
+        box-shadow: @horizontalOffset @verticalOffset @blur @spread
+            rgba(@red, @green, @blue, @opacity);
+    }
+}
+
+.card-area {
+    background-color: darkgrey;
+    margin: 80px auto 0 auto;
+    width: 80vw;
+    height: 80vh;
+    justify-content: center;
+}
+
+.card-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, @box-width); 
+    margin: 10% auto auto auto;
+    column-gap: 10px;
+    row-gap: 10px;
+    justify-content: center; 
+}
+
+.center {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.one-card {
+    box-sizing: border-box;
+    background-color: #ddd;
+    text-align: center;
+    justify-content: center; 
+    line-height: 50px;
+
+    &.my-card1 {
+        .mycard();
+    }
+
+    &.my-card2 {
+        .mycard(@spread: 3px, @blur: 15px);
+    }
+
+    &.my-card3 {
+        .mycard(@horizontalOffset: 3px, @verticalOffset: 7px);
+    }
+
+    &.my-card4 {
+        .mycard(@inset: true);
+    }
+
+    &.my-card5 {
+        .mycard(@color: blue, @opacity: 1, @blur: 15px, @spread: 1px);
+    }
+}
