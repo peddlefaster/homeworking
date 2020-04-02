@@ -1,3 +1,12 @@
+.fade-title {
+  text-align: center;
+  transform: translateY(-50px);
+}
+@media only screen and (max-width: 1250px) {
+  .fade-title {
+    opacity: 0;
+  }
+}
 .card-area {
   background-color: darkgrey;
   margin: 5% auto auto auto;
@@ -7,12 +16,12 @@
 }
 @media only screen and (max-width: 500px) {
   .card-area {
-    height: 500px;
+    height: 700px;
   }
 }
-@media only screen and (max-height: 625px) {
+@media only screen and (max-height: 750px) {
   .card-area {
-    height: 500px;
+    height: 700px;
   }
 }
 .card-grid {

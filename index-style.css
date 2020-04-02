@@ -1,0 +1,52 @@
+html,
+body {
+  background-color: rgba(1, 1, 1, 0.7);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-spec {
+  height: 90%;
+  width: auto;
+}
+.text-container {
+  background-color: rgba(1, 1, 1, 0.7);
+  width: 60%;
+  height: 80%;
+  position: absolute;
+}
+.headline-container {
+  font-family: Brush Script MT;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 110%;
+  color: lightgrey;
+  text-align: center;
+  transform: translateY(-25px);
+}
+.explainer-note {
+  font-family: Helvetica;
+  color: lightgrey;
+  font-size: 18px;
+  font-style: italic;
+  font-weight: normal;
+  text-align: left;
+  transform: translateY(-25%);
+  transform: translateX(16%);
+}
+.topic-link {
+  font-family: Brush Script MT;
+  font-size: 32px;
+  font-style: normal;
+  color: red;
+  text-align: center;
+}
+.topic-link:hover,
+.topic-link:visited,
+.topic-link:link,
+.topic-link:active {
+  text-decoration: none;
+}

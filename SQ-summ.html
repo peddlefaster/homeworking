@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SonarQube Overview</title>
+    </head>
+
+    <body>
+        <h1>SonarQube (SQ)</h1>
+        <p>
+            SQ is a mature (2008) tool that uses pattern matching and dataflow
+            analysis to analyze code and identify technical debt. It searches
+            for code smells, bugs, security vulnerabilities. SQ provides linting
+            capability for free, plus community & subscription editions of other
+            services. An organisational model for full implementation of SQ is
+            as follows: 
+            Developers code in their IDEs and use SonarLint (see below) to run local analysis.
+            Developers push their code into their favourite SCM : git, SVN, etc. 
+            CI/CD server triggers automatic build, plus execution of the SonarScanner required to run
+            the SonarQube analysis.
+            Analysis report is sent to the SonarQube Server for processing. 5. SonarQube Server processes/stores analysis
+            report results in SQ Database & displays results in UI/dashboard. 6.
+            Developers review, comment, challenge issues to manage/reduce
+            Technical Debt through the SonarQube UI. 7. Managers receive Reports
+            from the analysis. Ops use APIs to automate configuration and
+            extract data from SonarQube. Ops use JMX to monitor SonarQube
+            Server.
+        </p>
+        <p>
+            Community & free-trial license server editions are available here.
+            Various scanners are provided to integrate with assorted build
+            systems (Maven, Jenkins etc). Note that SonarSource analyzers do not
+            run tests or generate coverage reports. They only import
+            pre-generated reports. With JS jest-sonar-reporter or
+            karma-sonarqube-unit-reporter are recommended, creating reports in
+            the Generic Execution Data format. Both packages are available on
+            npm.
+        </p>
+        <p>
+            The JS-stack solution is SonarLint (open-source), integrated into
+            multiple IDEs for developers (eg. in VS Code), plus into automated
+            CI/CD pipelines via self-hosted SonarQube or on-line SonarCloud.
+            SonarLint is an IDE extension that helps developers detect/fix
+            quality issues. Like a spell checker, it squiggles flaws, so they
+            can be fixed before committing code It currently encapsulates 220+
+            rules which are essentially while-working Lint enhancements.
+            Additional custom JS rules can be written in Java or into ESLint and
+            imported.
+        </p>
+        <p>
+            SQ claims to be standards-based; implicitly validating its rule-set,
+            in-part perhaps for marketing purposes. This should be treated with
+            at least a little scepticism...
+        </p>
+        <p>
+            Criticism of SonarQube One 2020 study assessed the accuracy of SQ’s
+            fault-prediction model and whether SQ violations are actually
+            fault-prone by conducting an empirical study covering 21 mature
+            open-source Java projects. Result: ‘violations classified as bugs by
+            SonarQube hardly ever become a failure. Consequently, the accuracy
+            of the fault-prediction power proposed by SonarQube is extremely
+            low… rules applied by SonarQube for calculating technical debt
+            should be thoroughly investigated, their harmfulness confirmed…
+            companies should carefully consider which rules they really need to
+            apply, especially if their goal is to reduce fault-proneness’.
+        </p>
+
+        <p>
+            If you are still keen SonarLint download is available via the VS
+            Code extensions left-tab, or from here. To run, it requires Node.js
+            (version 8+), the Language support for Java VSCode extension
+            (version 0.56.0+), plus Java Runtime (JRE) 8 or 11. The JRE path can
+            be set explicitly via a sonarlint.ls.javaHome variable in VS Code
+            settings.
+        </p>
+        <p>
+            If you are still keen SonarLint download is available via the VS
+            Code extensions left-tab, or from here. To run, it requires Node.js
+            (version 8+), the Language support for Java VSCode extension
+            (version 0.56.0+), plus Java Runtime (JRE) 8 or 11. The JRE path can
+            be set explicitly via a sonarlint.ls.javaHome variable in VS Code
+            settings.
+        </p>
+        <p>
+            The service monitors as user types into JS, TS, Python, Java, HTML
+            or PHP files. It immediately highlights/squiggles code classified as
+            dubious, plus lists issues in the ‘Problems’ panel (terminal pane).
+            The squiggles are distracting, though a context R-click does provide
+            option to switch off assoc. rule. Unlike in, say, IntelliJ, there is
+            no option for an immediate auto-fix. Detailed rule descriptions can
+            be accessed directly via a contextual menu (clickable light-bulb).
+        </p>
+        <p>
+            SonarLint can also link to SonarQube >= 6.7 or SonarCloud, binding
+            workspace folders to a SonarQube/SonarCloud instance that inspects
+            code server-side. This is a token-based service, configurable (via
+            connection IDs) to bind to individual project folders.
+        </p>
+        <p>
+            SonarLint keep server side data in a local storage. Changes to the
+            quality profile etc. can update local storage via the command:
+            "SonarLint: Update all project bindings to SonarQube/SonarCloud" (in
+            command palette, search for "sonarlint").
+        </p>
+        <p></p>
+    </body>
+</html>

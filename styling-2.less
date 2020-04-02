@@ -4,6 +4,15 @@
 // Styling variables
 @box-width: 250px;
 
+.fade-title {
+    text-align: center;
+    transform: translateY(-50px);
+    
+    @media only screen and (max-width: 5*@box-width) {
+         opacity: 0;
+    }
+}
+
 // Use CSS box-shadow effects
 .mycard(@horizontalOffset: 0, @verticalOffset: 0, @blur: 10px, @color: #000, @opacity: 0.8, @spread: 0, @inset: false ) {
     @red: red(@color);
@@ -38,11 +47,11 @@
 
     // Fix hgt to correct disappearing top rows when scrolling  
     @media only screen and (max-width: 2*@box-width) {
-        height: 500px;
+        height: 700px;
         // background-color: lightgrey;
     }
-    @media only screen and (max-height: 2.5*@box-width) {
-        height: 500px;
+    @media only screen and (max-height: 3*@box-width) {
+        height: 700px;
     }
 }
 
